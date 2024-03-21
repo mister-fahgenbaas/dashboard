@@ -359,4 +359,9 @@ template {
 body {
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-areas: "nav header"
+                         "nav main";
+    grid-template: 1fr 1fr / 1fr 1fr;
 }
+
