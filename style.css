@@ -360,8 +360,69 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
+    grid-template: 20vh 80vh / 20% 1fr;
     grid-template-areas: "nav header"
                          "nav main";
-    grid-template: 1fr 1fr / 1fr 1fr;
+    font-family: system-ui, Roboto, "Segoe UI", Roboto, Helvetica, Arial, 
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+nav {
+    grid-area: nav;
+    /* height: 100vh*/;
+    background: green;
+    fill: white;
+    color: white;
+    padding: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    display: grid;
+    gap: 20px;
+    grid-template: repeat(12, 35px) / 1fr 5fr;
+    align-items: end;
+    justify-items: start;
+    grid-template-areas: "title-icon title"
+                         "home-icon home"
+                         "profile-icon profile"
+                         "messages-icon messages"
+                         "history-icon history"
+                         "tasks-icon tasks"
+                         "communities-icon communities"
+                         ". ."
+                         "settings-icon settings"
+                         "support-icon support"
+                         "privacy-icon privacy";
+}
+
+header {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template-areas: "search status"
+                         "greeting actions";
+    background: red;
+}
+
+main {
+    background: blue;
+}
+
+svg {
+    --size: 30px;
+    width: var(--size);
+    height: var(--size);
+}
+
+.nav-icon.title {
+    --size: 60px;
+    width: var(--size);
+    height: var(--size);
+    align-self: center;
+}
+
+nav > div:first-of-type {
+    font-size: 2rem;
+}
+
+.nav-icon {
+    justify-self: center;
+}
