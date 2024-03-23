@@ -370,7 +370,7 @@ body {
 nav {
     grid-area: nav;
     /* height: 100vh*/;
-    background: green;
+    background: #1f85d6;
     fill: white;
     color: white;
     padding: 30px;
@@ -399,7 +399,8 @@ header {
     grid-template: 1fr 1fr / 1fr 1fr;
     grid-template-areas: "search status"
                          "greeting actions";
-    background: red;
+    background: white;
+    padding: 20px 50px;
 }
 
 main {
@@ -425,4 +426,34 @@ nav > div:first-of-type {
 
 .nav-icon {
     justify-self: center;
+}
+
+/*
+form svg {
+    display: inline;
+    align-self: center;
+}
+*/
+
+form > button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+    display: inline;
+    background-color: #e1e6f0;
+    width: 100%;;
+    height: 2.3rem;
+    border-radius: 15px;
+    border: none;
+    padding: 0px 10px;
+}
+
+form {
+    display: grid;
+    grid-template: 1fr / 1fr 10fr;
+    align-items: center;
+    justify-items: start;
 }
