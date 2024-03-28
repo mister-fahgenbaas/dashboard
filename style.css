@@ -57,7 +57,7 @@ hr {
 }
 
 /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 1. Correct the inheritance and scaling of  size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
@@ -360,11 +360,11 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template: 20vh 80vh / 20% 1fr;
+    grid-template: 1fr 4fr / 20% 1fr;
     grid-template-areas: "nav header"
                          "nav main";
-    font-family: system-ui, Roboto, "Segoe UI", Roboto, Helvetica, Arial, 
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: Roboto;
+    font-weight: 900;
 }
 
 nav {
@@ -396,11 +396,11 @@ nav {
 
 header {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template: 1fr 1fr / 2fr 1fr;
     grid-template-areas: "search status"
                          "greeting actions";
     background: white;
-    padding: 20px 50px;
+    padding: 0px 50px 20px;
 }
 
 main {
@@ -456,4 +456,59 @@ form {
     grid-template: 1fr / 1fr 10fr;
     align-items: center;
     justify-items: start;
+}
+
+.status {
+    grid-area: status;
+    display: grid;
+    grid-template: 1fr / 15% 30% 55%;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    justify-self: end;
+    padding-right: 37px;
+}
+
+.status .alerts-icon {
+    justify-self: end;
+}
+
+.status .full_name {
+    justify-self: start;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.status .avatar-icon {
+    --size: 60px;
+    width: var(--size);
+    height: var(--size);
+}
+
+.greeting {
+    grid-area: greeting;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 5fr;
+    grid-template-areas: "greeting-avatar greeting-greet" "greeting-avatar greeting-full_name";
+}
+
+.greeting-avatar {
+  grid-area: greeting-avatar;
+  --size: 100px;
+  width: var(--size);
+  height: var(--size);
+}
+
+.greeting-greet {
+  grid-area: greeting-greet;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.greeting-full_name {
+  grid-area: greeting-full_name;
+  font-size: 24px;
+  /*! font-weight: bold */
+  font-family: Roboto-black;
+  margin: 0;
 }
