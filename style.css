@@ -360,7 +360,7 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template: 1fr 4fr / 20% 1fr;
+    grid-template: 1fr 4fr / 21% 1fr;
     grid-template-areas: "nav header"
                          "nav main";
     font-family: Roboto;
@@ -375,7 +375,7 @@ nav {
     color: white;
     padding: 30px;
     font-size: 24px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     display: grid;
     gap: 20px;
     grid-template: repeat(12, 35px) / 1fr 5fr;
@@ -396,15 +396,19 @@ nav {
 
 header {
     display: grid;
-    grid-template: 1fr 1fr / 2fr 1fr;
+    grid-template: 1fr 1fr / 1.7fr 1fr;
     grid-template-areas: "search status"
                          "greeting actions";
     background: white;
     padding: 0px 50px 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 3px 5px #c4c4c4;
+    column-gap: 30px;
 }
 
 main {
-    background: blue;
+    background: #e1e6f0;
 }
 
 svg {
@@ -439,6 +443,8 @@ form > button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  justify-self: right;
+  margin-right: 12px;
 }
 
 input {
@@ -455,7 +461,6 @@ form {
     display: grid;
     grid-template: 1fr / 1fr 10fr;
     align-items: center;
-    justify-items: start;
 }
 
 .status {
@@ -476,7 +481,7 @@ form {
 .status .full_name {
     justify-self: start;
     font-size: 20px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .status .avatar-icon {
@@ -494,7 +499,7 @@ form {
 
 .greeting-avatar {
   grid-area: greeting-avatar;
-  --size: 100px;
+  --size: 90px;
   width: var(--size);
   height: var(--size);
 }
@@ -511,4 +516,20 @@ form {
   /*! font-weight: bold */
   font-family: Roboto-black;
   margin: 0;
+}
+
+.actions {
+    display: grid;
+    grid-template: 50% / 1fr 1fr 1fr;
+    column-gap: 40px;
+    align-self: center;
+}
+
+[class^="btn"] {
+    background: #1f85d6;
+    border-radius: 27px;
+    color: white;
+    font-weight: 900;
+    padding: 0.8rem;
+    border: none;
 }
