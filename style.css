@@ -370,17 +370,15 @@ body {
 
 nav {
     grid-area: nav;
-    /* height: 100vh*/;
-    /*background: #1f85d6;*/
+    ;
     background: var(--clr);
     fill: white;
     color: white;
-    padding: 30px;
+    padding: 17px;
     font-size: 24px;
-    /*font-weight: bold;*/
     display: grid;
     gap: 20px;
-    grid-template: repeat(12, 35px) / 1fr 5fr;
+    grid-template: 60px repeat(11, 35px) / 1fr 5fr;
     align-items: end;
     justify-items: start;
     grid-template-areas: "title-icon title"
@@ -427,10 +425,15 @@ svg {
 
 nav > div:first-of-type {
     font-size: 2rem;
+    align-self: center;
 }
 
 .nav-icon {
     justify-self: center;
+}
+
+.nav > a, .nav > a:hover, .nav > a:visited, .nav > a:link, .nav > a:active {
+  text-decoration: none;
 }
 
 /*
