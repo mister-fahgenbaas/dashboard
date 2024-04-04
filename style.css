@@ -75,6 +75,8 @@ pre {
 
 a {
   background-color: transparent;
+  display: inline-block;
+  justify-self: center;
 }
 
 /**
@@ -414,6 +416,8 @@ svg {
     --size: 30px;
     width: var(--size);
     height: var(--size);
+    position: relative;    /* To remove extra height added by <a>*/
+    top: 5.3px;            /* <a> tags add 5.3px to height */
 }
 
 .nav-icon.title {
@@ -423,25 +427,24 @@ svg {
     align-self: center;
 }
 
-nav > div:first-of-type {
+.title {
     font-size: 2rem;
     align-self: center;
 }
 
 .nav-icon {
-    justify-self: center;
+    /*! justify-self: center; */
 }
 
-.nav > a, .nav > a:hover, .nav > a:visited, .nav > a:link, .nav > a:active {
+nav .link-text {
+  justify-self: start;
+}
+
+nav > a, nav > a:hover, nav > a:visited, nav > a:link, nav > a:active {
   text-decoration: none;
+  color: inherit;
 }
 
-/*
-form svg {
-    display: inline;
-    align-self: center;
-}
-*/
 
 form > button {
   background-color: transparent;
