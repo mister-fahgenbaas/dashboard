@@ -29,7 +29,6 @@ body {
  */
 
 main {
-  display: block;
 }
 
 /**
@@ -366,7 +365,7 @@ body {
     grid-template-areas: "nav header"
                          "nav main";
     font-family: Montserrat, Roboto;
-    font-weight: 620;
+    font-weight: 600;
     --clr: #0f0f57;
 }
 
@@ -430,6 +429,8 @@ svg {
 .title {
     font-size: 2rem;
     align-self: center;
+    font-weight: 710;
+    text-shadow: #ffa500 1px 1px 3px;
 }
 
 .nav-icon {
@@ -445,6 +446,9 @@ nav > a, nav > a:hover, nav > a:visited, nav > a:link, nav > a:active {
   color: inherit;
 }
 
+nav > a:hover {
+  font-weight: bold;
+}
 
 form > button {
   background-color: transparent;
@@ -502,6 +506,7 @@ form {
     display: grid;
     grid-template: 1fr 1fr / 1fr 5fr;
     grid-template-areas: "greeting-avatar greeting-greet" "greeting-avatar greeting-full_name";
+    font-weight: 700;
 }
 
 .greeting-avatar {
@@ -520,7 +525,6 @@ form {
 .greeting-full_name {
   grid-area: greeting-full_name;
   font-size: 24px;
-  /*! font-weight: bold */
   /*! font-family: Roboto-black; */
   margin: 0;
 }
@@ -549,13 +553,11 @@ main {
     grid-template-areas: "projects announcements"
                          "projects trending";
     
+    padding-bottom: 75px;
 }
 
 .main-projects {
     grid-area: projects;
-    /* display: grid; */
-    /* grid-template: 3rem 1fr 1fr 1fr / 1fr 1fr; */
-    /* grid-gap: 30px; */
     padding: 10px 25px;
 }
 
@@ -566,8 +568,11 @@ main {
 }
 
 .main-announcements {
-    background: green;
     grid-area: announcements;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 25px;
 }
 
 .main-trending {
@@ -575,12 +580,9 @@ main {
     grid-area: trending;
 }
 
-.main-projects-header {
-    /* grid-area: 1 / 1 / 2 / 3; */
-    font-size: 18pt;
+.main-header {
     font-weight: 600;
     margin-bottom: 15px;
-    align-self: end;
 }
 
 .card {
@@ -596,12 +598,17 @@ main {
 
 .card > div > h3 {
     margin-top: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .card p {
+      margin: 0px;
+}
+
+.card p, .main-announcements-cards p {
     color: #646464;
-    margin: 0px;
 }
 
 .card-icons {
@@ -637,4 +644,19 @@ main {
 
 .main > p {
     background-color: transparent;
+}
+
+.main-announcements-cards {
+    display: grid;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.main-announcements-cards div:not(div:first-child) {
+    border-top: #c8c8c8 2px solid;
+}
+
+.main-announcements-cards {
+    background-color: white;
+    font-weight: 500;
 }
