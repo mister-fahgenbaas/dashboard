@@ -361,7 +361,7 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template: 1fr 4fr / 21% 1fr;
+    grid-template: 1fr 5fr / 21% 1fr;
     grid-template-areas: "nav header"
                          "nav main";
     font-family: Montserrat, Roboto;
@@ -554,9 +554,8 @@ form {
 main {
     background: #d9d4ff;
     display: grid;
-    grid-template: 1fr 1fr / 73% 1fr;
-    grid-template-areas: "projects announcements"
-                         "projects trending";
+    grid-template: 1fr 1fr 50px / 73% 1fr;
+    grid-template-areas: "projects announcements" "projects trending     " "footer footer";
     
     padding: 10px 25px;
     grid-gap: 25px;
@@ -565,6 +564,8 @@ main {
 .main-projects {
     grid-area: projects;
     /*! padding: 10px 25px; */
+    display: grid;
+    grid-template-rows: 60px auto;
 }
 
 .cards {
@@ -575,6 +576,8 @@ main {
 
 .main-announcements {
     grid-area: announcements;
+    display: grid;
+    grid-template-rows: 60px auto;
 }
 
 .main-trending {
@@ -689,4 +692,6 @@ main {
     grid-template: repeat(4, 1fr) / 1fr 3fr;
 }
 
-.main-trending-cards
+footer {
+    grid-area: footer;
+}
