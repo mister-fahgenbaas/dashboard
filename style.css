@@ -411,12 +411,16 @@ header {
     column-gap: 30px;
 }
 
-svg {
+nav svg, form svg {
     --size: 30px;
     width: var(--size);
     height: var(--size);
     position: relative;    /* To remove extra height added by <a>*/
     top: 5.3px;            /* <a> tags add 5.3px to height */
+}
+
+nav svg:hover{
+    fill: #ffffff87;
 }
 
 .nav-icon.title {
@@ -447,7 +451,8 @@ nav > a, nav > a:hover, nav > a:visited, nav > a:link, nav > a:active {
 }
 
 nav > a:hover {
-  font-weight: bold;
+  /*! font-weight: bold; */
+  color: #ffffff87;
 }
 
 form > button {
@@ -553,12 +558,13 @@ main {
     grid-template-areas: "projects announcements"
                          "projects trending";
     
-    padding-bottom: 75px;
+    padding: 10px 25px;
+    grid-gap: 25px;
 }
 
 .main-projects {
     grid-area: projects;
-    padding: 10px 25px;
+    /*! padding: 10px 25px; */
 }
 
 .cards {
@@ -569,14 +575,10 @@ main {
 
 .main-announcements {
     grid-area: announcements;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 0px;
-    padding-right: 25px;
 }
 
 .main-trending {
-    background: blue;
+    /* background: blue; */
     grid-area: trending;
 }
 
@@ -647,16 +649,44 @@ main {
 }
 
 .main-announcements-cards {
+    background-color: white;
+    font-weight: 500;
     display: grid;
-    padding: 30px;
     border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .main-announcements-cards div:not(div:first-child) {
     border-top: #c8c8c8 2px solid;
 }
 
-.main-announcements-cards {
-    background-color: white;
-    font-weight: 500;
+.main-announcements-cards p, .main-announcements-cards h4{
+    margin: 0px;
 }
+
+.main-announcements-cards > div {
+    padding: 20px 0px;
+}
+
+.main-announcements-cards p {
+    font-size: 12px;
+}
+
+.main-announcements-cards h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.main-trending-cards {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 10px;
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr 3fr;
+}
+
+.main-trending-cards
