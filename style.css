@@ -402,7 +402,6 @@ header {
     grid-template: 1fr 1fr / 1.7fr 1fr;
     grid-template-areas: "search status"
                          "greeting actions";
-    /*background: white;*/
     background: #fff;
     padding: 0px 50px 20px;
     position: relative;  
@@ -482,10 +481,10 @@ form {
 .status {
     grid-area: status;
     display: grid;
-    grid-template: 1fr / 15% 25% 60%;
-    gap: 20px;
+    grid-template: 1fr / 30px 60px 1fr;
+    gap: 25px;
     align-items: center;
-    justify-items: center;
+    justify-items: end;
     justify-self: end;
     padding-right: 0px;
 }
@@ -660,6 +659,7 @@ main {
     padding-bottom: 20px;
     padding-left: 30px;
     padding-right: 30px;
+    align-items: center;
 }
 
 .main-announcements-cards div:not(div:first-child) {
@@ -690,8 +690,21 @@ main {
     padding: 20px 10px;
     display: grid;
     grid-template: repeat(4, 1fr) / 1fr 3fr;
+    align-items: center;
+    column-gap: 15px;
+    row-gap: 25px;
 }
 
 footer {
     grid-area: footer;
+}
+
+.usertext p {
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0px 0px 3px 0px;
+}
+
+.usertext p:nth-child(2) {
+    color: #646464;
 }
