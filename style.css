@@ -580,8 +580,10 @@ main {
 }
 
 .main-trending {
-    /* background: blue; */
+    /*! background: blue; */
     grid-area: trending;
+    display: grid;
+    grid-template-rows: 60px auto;
 }
 
 .main-header {
